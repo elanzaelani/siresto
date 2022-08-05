@@ -1,0 +1,35 @@
+//Creae User
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name":"Elan Z",
+    "email":"ezaelani@gmail.com",
+    "password":"sukses",
+    "confPassword":"sukses",
+    "role":"admin"
+}
+
+###
+GET http://localhost:5000/users
+
+###
+GET http://localhost:5000/users/e0dfe3fb-f89d-4504-9657-a0ac088b94f5
+
+###
+PATCH  http://localhost:5000/users/e0dfe3fb-f89d-4504-9657-a0ac088b94f5
+###
+PATCH  http://localhost:5000/users/e0dfe3fb-f89d-4504-9657-a0ac088b94f5
+Content-Type: application/json
+
+{
+    "name":"Elan Zaelani",
+    "email":"ezaelani@gmail.com",
+    "password":"",
+    "confPassword":"",
+    "role":"admin"
+}
+###
+DELETE   http://localhost:5000/users/e0dfe3fb-f89d-4504-9657-a0ac088b94f5
+Content-Type: application/json
+
