@@ -1,6 +1,6 @@
 import Users from '../models/UserModel.js'
 import argon2 from 'argon2'
-import e from 'express';
+import express from 'express';
 
 export const getUsers = async (req, res) => {
     try {
@@ -58,7 +58,7 @@ export const updateUser = async (req, res) => {
     if (!user) return res.status(404).json({ msg: "User tidak ditemukan" });
     const { name, email, password, confPassword, role } = req.body;
     let hashPassword;
-    if (password === "" || paassword === null) {
+    if (password === "" || password === null) {
         hashPassword = user.password
     } else {
         hashPassword = await argon2.hash(password);
