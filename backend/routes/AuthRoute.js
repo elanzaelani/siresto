@@ -4,7 +4,7 @@ import {
     logout,
     Me
     
-} from '../controllers/Auth'
+} from '../controllers/Auth.js'
     
 
 const router=express.Router();

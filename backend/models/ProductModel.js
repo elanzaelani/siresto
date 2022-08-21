@@ -1,11 +1,11 @@
 import sequelize from 'sequelize'
 import {Sequelize} from 'sequelize'
 import db from '../config/Database.js'
-import Users from './UserModel.js'  
+import User from './UserModel.js'  
 
 const {DataTypes}= sequelize;
 
-const Products = db.define('product',{
+const Product = db.define('product',{
     uuid:{
         type:DataTypes.STRING,
         defaultValue:DataTypes.UUIDV4,
@@ -43,7 +43,7 @@ const Products = db.define('product',{
 
 //membuat relasi
 //One to Many = satu User bisa input byk product
-Users.hasMany(Products);
-Products.belongsTo(Users,{foreignKey:'userId'})
+User.hasMany(Product);
+Product.belongsTo(User,{foreignKey:'userId'})
 
-export default Products;
+export default Product;
