@@ -2,9 +2,9 @@ import express from 'express'
 import {
     getProducts,
     getProductById,
-    createProduct,
     updateProduct,
-    deleteProduct
+    deleteProduct,
+    createProduk
 } from '../controllers/Products.js';
 
 import {verifyUser} from '../middleware/AuthUser.js'
@@ -14,7 +14,7 @@ const router=express.Router();
 
 router.get('/products', verifyUser,getProducts)
 router.get('/product/:id', verifyUser,getProductById)
-router.post('/product/',verifyUser, createProduct)
+router.post('/product/',verifyUser, createProduk)
 router.patch('/product/:id', verifyUser,updateProduct)
 router.delete('/product/:id',verifyUser,deleteProduct)
 

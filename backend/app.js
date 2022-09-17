@@ -7,6 +7,11 @@ import db from './config/Database.js'
 import UserRoute from './routes/UserRoute.js'
 import ProductRoute from './routes/ProductRoute.js'
 import AuthRoute from './routes/AuthRoute.js'
+import Menu from './models/MenuModel.js'
+import Pesanan from './models/PesananModel.js'
+import KategoriRoute from './routes/KategoriRoute.js';
+import Produk from './models/ProductModel.js'
+
 dotenv.config()
 
 const app= express();
@@ -17,9 +22,9 @@ const store= new sessionStore({
 });
 
 // utk mengenerate table
-// (async()=>{
-//     await db.sync()
-// })()
+(async()=>{
+    await db.sync()
+})()
 
 
 app.use(session({
@@ -42,6 +47,7 @@ app.use(cors({
 app.use(express.json());
 app.use(UserRoute);
 app.use(ProductRoute);
+app.use(KategoriRoute);
 app.use(AuthRoute);
 
 store.sync();

@@ -3,11 +3,11 @@ POST http://localhost:5000/user
 Content-Type: application/json
 
 {
-    "name":"elan",
-    "email":"elan@gmail.com",
+    "name":"Nadhifa Hasna Amira",
+    "email":"difa@gmail.com",
     "password":"sukses",
     "confPassword":"sukses",
-    "role":"admin"
+    "role":"user"
 }
 
 ###
@@ -54,12 +54,11 @@ DELETE http://localhost:5000/logout
 
 
 ###
-//getAllProduct
-GET http://localhost:5000/products
+//getALL Kategori
+GET http://localhost:5000/kategoris
 ###
-//get Single Product
-GET http://localhost:5000/product/a226e1d5-52c6-492c-9a6d-62fd360856ad
-
+//get Single Katgegori
+GET http://localhost:5000/kategori/b6188291-48b4-4e04-8561-5e5f9241f194
 ###
 //Create Product
 POST http://localhost:5000/product
@@ -67,8 +66,8 @@ Content-Type: application/json
 
 {
     "kode":"P001",
-    "nama":"Produk1",
-    "harga":3000,
+    "nama":"Nasi Goreng",
+    "harga":15000,
     "is_ready":true,
     "gambar":"gmbar.jpg",
     "kategoriId":1
@@ -77,23 +76,18 @@ Content-Type: application/json
 
 
 ###
-//Update Produk
-PATCH http://localhost:5000/product/a226e1d5-52c6-492c-9a6d-62fd360856ad
+//Update Kategori
+PATCH http://localhost:5000/kategori/79eeee49-c0e3-45ec-814c-dac095f526ef
 Content-Type: application/json
 
 {
-    "kode":"P001",
-    "nama":"Produk1 updated",
-    "harga":3000,
-    "is_ready":true,
-    "gambar":"gmbar.jpg",
-    "kategoriId":1
+    "nama":"makanan u"
     
 }
 
 ###
 
-DELETE http://localhost:5000/product/a226e1d5-52c6-492c-9a6d-62fd360856ad
+DELETE http://localhost:5000/kategori/79eeee49-c0e3-45ec-814c-dac095f526ef
 
 
 ###
@@ -101,5 +95,5 @@ POST http://localhost:5000/kategori
 Content-Type: application/json
 
 {
-    "nama":"Minuman"
+    "nama":"Disert"
 }
